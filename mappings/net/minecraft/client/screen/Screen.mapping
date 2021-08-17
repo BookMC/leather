@@ -1,5 +1,7 @@
 CLASS da net/minecraft/client/screen/Screen
 	FIELD b game Lnet/minecraft/client/Minecraft;
+	FIELD c width I
+	FIELD d height I
 	FIELD e components Ljava/util/List;
 	FIELD g gameFontRenderer Lsj;
 	METHOD a render (IIF)V

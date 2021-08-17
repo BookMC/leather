@@ -1,19 +1,34 @@
 CLASS net/minecraft/client/Minecraft net/minecraft/client/MinecraftClient
+	FIELD A applet Lnet/minecraft/client/MinecraftApplet;
+	FIELD K debugInfo Ljava/lang/String;
 	FIELD P startTime J
-	FIELD af minecraftDir Ljava/io/File;
+	FIELD Z minecraftFolder Ljava/io/File;
+	FIELD af gameFolder Ljava/io/File;
 	FIELD b reservedMemory [B
+		COMMENT Reserved memory is present to make sure the game has enough memory to continue.
+		COMMENT If it doesn't then it WILL crash with an {@see OutOfMemoryException}
 	FIELD d gameWidth I
 	FIELD e gameHeight I
 	FIELD r currentScreen Lda;
 	FIELD z settings Lkv;
 	METHOD <init> (Ljava/awt/Component;Ljava/awt/Canvas;Lnet/minecraft/client/MinecraftApplet;IIZ)V
 		ARG 3 applet
+	METHOD C forceReload ()V
 	METHOD a openScreen (Lda;)V
 		ARG 1 screen
-	METHOD a createMinecraftFolder (Ljava/lang/String;)Ljava/io/File;
+	METHOD a createGameFolder (Ljava/lang/String;)Ljava/io/File;
 		ARG 0 folderName
-	METHOD b getMinecraftDirectory ()Ljava/io/File;
+	METHOD a startGame (Ljava/lang/String;Ljava/lang/String;)V
+		ARG 0 username
+	METHOD a startGame (Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+		ARG 0 username
+	METHOD b getGameFolder ()Ljava/io/File;
+	METHOD b fail (Lmh;)V
+		ARG 1 failure
 	METHOD c pushPhase (Ljava/lang/String;)V
 		ARG 1 phase
+	METHOD e cleanup ()V
 	METHOD f exitGame ()V
-	METHOD y getOperatingSystem ()Lpd;
+	METHOD main ([Ljava/lang/String;)V
+		ARG 0 args
+	METHOD y getPlatform ()Lpd;

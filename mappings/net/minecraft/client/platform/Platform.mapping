@@ -1,0 +1,6 @@
+CLASS pd net/minecraft/client/platform/Platform
+	FIELD a LINUX Lpd;
+	FIELD b SOLARIS Lpd;
+	FIELD c WINDOWS Lpd;
+	FIELD d MACOS Lpd;
+	FIELD e UNKNOWN Lpd;

@@ -1,0 +1,6 @@
+CLASS qb net/minecraft/client/keybinding/GameKeybind
+	FIELD a localized Ljava/lang/String;
+	FIELD b keyCode I
+	METHOD <init> (Ljava/lang/String;I)V
+		ARG 1 localized
+		ARG 2 keyCode

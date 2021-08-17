@@ -1,0 +1,4 @@
+CLASS n
+	FIELD t game Lnet/minecraft/client/Minecraft;
+	METHOD <init> (Lnet/minecraft/client/Minecraft;Lji;)V
+		ARG 1 game

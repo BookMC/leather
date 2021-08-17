@@ -1,0 +1,33 @@
+CLASS kv net/minecraft/client/config/GameConfig
+	FIELD C lastServer Ljava/lang/String;
+	FIELD I guiScale I
+	FIELD N configFile Ljava/io/File;
+	FIELD a music F
+	FIELD b sound F
+	FIELD c mouseSensitivity F
+	FIELD d invertYMouse Z
+	FIELD e viewDistance I
+	FIELD f viewBobbing Z
+	FIELD g anaglyph Z
+	FIELD h advancedOpengl Z
+	FIELD i fpsLimit I
+	FIELD j fancyGraphics Z
+	FIELD l skin Ljava/lang/String;
+	FIELD m forwardKeybind Lqb;
+	FIELD n leftKeybind Lqb;
+	FIELD o backKeybind Lqb;
+	FIELD p rightKeybind Lqb;
+	FIELD q jumpKeybind Lqb;
+	FIELD r inventoryKeybind Lqb;
+	FIELD s dropKeybind Lqb;
+	FIELD t chatKeybind Lqb;
+	FIELD u fogKeybind Lqb;
+	FIELD v sneakKeybind Lqb;
+	FIELD w keybindings [Lqb;
+	FIELD x game Lnet/minecraft/client/Minecraft;
+	FIELD y difficulty I
+	METHOD <init> (Lnet/minecraft/client/Minecraft;Ljava/io/File;)V
+		ARG 1 game
+		ARG 2 gameDirectory
+	METHOD a parseBoolean (Ljava/lang/String;)F
+		ARG 1 raw
