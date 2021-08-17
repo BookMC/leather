@@ -11,6 +11,9 @@ repositories {
     maven {
         url "https://jitpack.io/"
     }
+    maven {
+        url "https://maven.fabricmc.net"
+    }
 }
 
 dependencies {
@@ -19,4 +22,7 @@ dependencies {
     implementation "io.ktor:ktor-client-apache:$ktorVersion"
 
     implementation "com.github.ChachyDev:GitVersion:394b3c5363"
+
+    implementation "cuchaz:enigma-cli:1.4.1"
+    implementation "cuchaz:enigma:1.4.1"
 }

@@ -1,0 +1,82 @@
+import org.bookmc.leather.tasks.ExportMappingsTask
+import org.bookmc.leather.tasks.GenerateJarTask
+
+plugins {
+    id "maven-publish"
+    id "java"
+}
+
+def branch = "git rev-parse --abbrev-ref HEAD".execute().text
+
+group "org.bookmc.leather"
+version "0.0.1"
+
+tasks.register("generateJar", GenerateJarTask) {
+    group = "leather"
+    if (branch == "main") {
+        throw new IllegalStateException("The branch cannot be main! It must be a version")
+    }
+
+    it.version.set(branch)
+    it.dest.set("mapping-utils")
+}
+
+tasks.register("exportMappingsToTiny", ExportMappingsTask) {
+    group = "leather"
+
+    mappings.set("mappings")
+    exportedFile.set("build/exported/mappings/mapping.tiny")
+
+    doLast {
+        project.configurations.register("mappings")
+        project.dependencies.add("mappings", project.files("build/exported"))
+    }
+}
+
+tasks.jar.dependsOn(tasks.exportMappingsToTiny)
+
+jar {
+    from {
+        if (configurations.findByName("mappings") != null) {
+            configurations.getByName("mappings").collect { it.isDirectory() ? it : zipTree(it) }
+        }
+    }
+}
+
+
+publishing {
+    repositories {
+        maven {
+            def env = System.getenv()
+            def local = !env.GITHUB_ACTIONS
+
+            boolean isEnvVarsAvailable = env.containsKey("MAVEN_USER") && env.containsKey("MAVEN_PASSWORD")
+
+            if (isEnvVarsAvailable) {
+                credentials {
+                    username env.get("MAVEN_USER")
+                    password env.get("MAVEN_PASSWORD")
+                }
+            }
+
+            url = local || !isEnvVarsAvailable ? "$buildDir/repository" : "https://maven.bookmc.org/releases/"
+        }
+    }
+
+    publications {
+        //noinspection GroovyAssignabilityCheck
+        mavenJava(MavenPublication) {
+            from components.java
+            pom {
+                name = project.name
+                url = "https://github.com/BookMC/${project.name}"
+
+                developers {
+                    developer {
+                        name = "ChachyDev"
+                    }
+                }
+            }
+        }
+    }
+}

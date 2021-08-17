@@ -18,7 +18,7 @@ abstract class GenerateJarTask : DefaultTask() {
     @TaskAction
     fun run() {
         runBlocking {
-            GameInstaller.download(version.get(), File(dest.get()))
+            GameInstaller.download(version.get(), File(project.projectDir, dest.get()))
         }
     }
 }
