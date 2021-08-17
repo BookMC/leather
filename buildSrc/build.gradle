@@ -1,0 +1,22 @@
+plugins {
+    id "org.jetbrains.kotlin.jvm" version "1.5.21"
+}
+
+ext {
+    ktorVersion = "1.6.0"
+}
+
+repositories {
+    mavenCentral()
+    maven {
+        url "https://jitpack.io/"
+    }
+}
+
+dependencies {
+    implementation "io.ktor:ktor-client-gson:$ktorVersion"
+    implementation "io.ktor:ktor-client-core:$ktorVersion"
+    implementation "io.ktor:ktor-client-apache:$ktorVersion"
+
+    implementation "com.github.ChachyDev:GitVersion:394b3c5363"
+}
