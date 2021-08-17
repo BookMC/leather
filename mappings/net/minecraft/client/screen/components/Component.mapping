@@ -1,3 +1,3 @@
-CLASS ub Component
+CLASS ub net/minecraft/client/screen/components/Component
 	METHOD a renderShadedText (Lsj;Ljava/lang/String;III)V
 	METHOD b renderText (Lsj;Ljava/lang/String;III)V

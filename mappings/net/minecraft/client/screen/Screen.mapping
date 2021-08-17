@@ -1,4 +1,4 @@
-CLASS da Screen
+CLASS da net/minecraft/client/screen/Screen
 	FIELD b game Lnet/minecraft/client/Minecraft;
 	FIELD e components Ljava/util/List;
 	FIELD g gameFontRenderer Lsj;
