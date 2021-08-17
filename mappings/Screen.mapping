@@ -1,0 +1,12 @@
+CLASS da Screen
+	FIELD b game Lnet/minecraft/client/Minecraft;
+	FIELD e components Ljava/util/List;
+	FIELD g gameFontRenderer Lsj;
+	METHOD a render (IIF)V
+		ARG 1 mouseXPosition
+		ARG 2 mouseYPosition
+		ARG 3 ticks
+	METHOD a onButtonPressed (Lke;)V
+		ARG 1 component
+	METHOD b initialize ()V
+	METHOD h normalizeKeyboard ()V

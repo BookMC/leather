@@ -1,0 +1,4 @@
+CLASS co net/minecraft/client/screen/menu/OptionsMenuScreen
+	FIELD i parent Lda;
+	METHOD <init> (Lda;Lkv;)V
+		ARG 1 parent

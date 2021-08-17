@@ -1,0 +1,5 @@
+CLASS fj net/minecraft/client/screen/menu/WorldCreationMenuScreen
+	FIELD a parent Lda;
+	FIELD l worldFolderName Ljava/lang/String;
+	METHOD <init> (Lda;)V
+		ARG 1 parent

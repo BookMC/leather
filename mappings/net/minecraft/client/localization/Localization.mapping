@@ -1,0 +1,5 @@
+CLASS nh net/minecraft/client/localization/Localization
+	FIELD a INSTANCE Lnh;
+	FIELD b properties Ljava/util/Properties;
+	METHOD a getInstance ()Lnh;
+	METHOD a get (Ljava/lang/String;)Ljava/lang/String;

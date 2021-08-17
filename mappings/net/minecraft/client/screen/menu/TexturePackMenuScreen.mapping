@@ -1,0 +1,7 @@
+CLASS ft net/minecraft/client/screen/menu/TexturePackMenuScreen
+	FIELD a parent Lda;
+	FIELD j texutrePackFolderPath Ljava/lang/String;
+	METHOD <init> (Lda;)V
+		ARG 1 parent
+	METHOD a getGame (Lft;)Lnet/minecraft/client/Minecraft;
+		ARG 0 screen

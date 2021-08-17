@@ -1,0 +1,3 @@
+CLASS id
+	METHOD a (F)V
+		ARG 1 f

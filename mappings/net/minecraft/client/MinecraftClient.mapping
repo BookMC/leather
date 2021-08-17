@@ -1,0 +1,19 @@
+CLASS net/minecraft/client/Minecraft net/minecraft/client/MinecraftClient
+	FIELD P startTime J
+	FIELD af minecraftDir Ljava/io/File;
+	FIELD b reservedMemory [B
+	FIELD d gameWidth I
+	FIELD e gameHeight I
+	FIELD r currentScreen Lda;
+	FIELD z settings Lkv;
+	METHOD <init> (Ljava/awt/Component;Ljava/awt/Canvas;Lnet/minecraft/client/MinecraftApplet;IIZ)V
+		ARG 3 applet
+	METHOD a openScreen (Lda;)V
+		ARG 1 screen
+	METHOD a createMinecraftFolder (Ljava/lang/String;)Ljava/io/File;
+		ARG 0 folderName
+	METHOD b getMinecraftDirectory ()Ljava/io/File;
+	METHOD c pushPhase (Ljava/lang/String;)V
+		ARG 1 phase
+	METHOD f exitGame ()V
+	METHOD y getOperatingSystem ()Lpd;

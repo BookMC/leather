@@ -1,0 +1,2 @@
+CLASS sj
+	METHOD a getWidth (Ljava/lang/String;)I

@@ -1,0 +1,26 @@
+CLASS ke net/minecraft/client/screen/components/ButtonComponent
+	FIELD a width I
+	FIELD b height I
+	FIELD c posX I
+	FIELD d posY I
+	FIELD e text Ljava/lang/String;
+	FIELD f id I
+	FIELD g enabled Z
+	METHOD <init> (IIIIILjava/lang/String;)V
+		ARG 1 id
+		ARG 2 posX
+		ARG 3 posY
+		ARG 4 width
+		ARG 5 height
+		ARG 6 text
+	METHOD <init> (IIILjava/lang/String;)V
+		ARG 1 id
+		ARG 2 posX
+		ARG 3 posY
+		ARG 4 text
+	METHOD a (Lnet/minecraft/client/Minecraft;II)V
+		ARG 1 game
+	METHOD b (Lnet/minecraft/client/Minecraft;II)V
+		ARG 1 game
+	METHOD c (Lnet/minecraft/client/Minecraft;II)Z
+		ARG 1 game

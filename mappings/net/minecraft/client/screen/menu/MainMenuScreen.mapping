@@ -1,0 +1,4 @@
+CLASS fu net/minecraft/client/screen/menu/MainMenuScreen
+	FIELD a random Ljava/util/Random;
+	FIELD j splashText Ljava/lang/String;
+	FIELD l multiplayerButtonComponent Lke;

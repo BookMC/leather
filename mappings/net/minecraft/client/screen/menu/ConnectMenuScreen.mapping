@@ -1,0 +1,4 @@
+CLASS lq net/minecraft/client/screen/menu/ConnectMenuScreen
+	FIELD a parent Lda;
+	METHOD <init> (Lda;)V
+		ARG 1 parent
