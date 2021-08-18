@@ -27,6 +27,6 @@ abstract class ExportMappingsTask : DefaultTask() {
 
         val params = MappingSaveParameters(MappingFileNameFormat.BY_DEOBF)
         val mappings = MappingCommandsUtil.read("enigma", mappingsFolder, params)
-        MappingCommandsUtil.write(mappings, "tiny:from_column:to_column", export.toPath(), params)
+        MappingCommandsUtil.write(mappings, "tinyv2:from_namespace:to_namespace", export.toPath(), params)
     }
 }

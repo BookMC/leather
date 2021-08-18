@@ -9,7 +9,7 @@ plugins {
 def branch = "git rev-parse --abbrev-ref HEAD".execute().text.trim()
 
 group "org.bookmc"
-version "0.0.1-${branch}"
+version "0.1.0-${branch}"
 
 tasks.register("generateJar", GenerateJarTask) {
     group = "leather"
