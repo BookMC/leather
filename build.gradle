@@ -8,10 +8,10 @@ plugins {
 
 def branch = "git rev-parse --abbrev-ref HEAD".execute().text.trim()
 
-def buildNumber = System.getenv().BUILD_NUMBER ?: "local"
+def buildNumber = "build.${System.getenv().BUILD_NUMBER}" ?: "local"
 
 group "org.bookmc"
-version "0.2.1+${buildNumber}-${branch}"
+version "0.2.2+${buildNumber}-${branch}"
 
 tasks.register("generateJar", GenerateJarTask) {
     group = "leather"
