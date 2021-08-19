@@ -7,6 +7,12 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Generate build number
+        id: buildnumber
+        uses: einaregilsson/build-number@v3
+        with:
+          token: ${{ secrets.github_token }}
+          prefix: ${{ github.ref }}
       - uses: actions/checkout@v2
       - name: Set up JDK 16
         uses: actions/setup-java@v2
