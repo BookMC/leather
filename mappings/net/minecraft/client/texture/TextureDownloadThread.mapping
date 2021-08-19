@@ -1,0 +1,15 @@
+CLASS cz net/minecraft/client/texture/TextureDownloadThread
+	FIELD a resourcesFolder Ljava/io/File;
+	FIELD b game Lnet/minecraft/client/Minecraft;
+	METHOD <init> (Ljava/io/File;Lnet/minecraft/client/Minecraft;)V
+		ARG 1 gameDir
+		ARG 2 game
+	METHOD a (Ljava/io/File;Ljava/lang/String;)V
+		ARG 2 name
+	METHOD a writeURLtoFile (Ljava/net/URL;Ljava/io/File;J)V
+		ARG 1 url
+		ARG 2 file
+		ARG 3 l
+	METHOD a (Ljava/net/URL;Ljava/lang/String;JI)V
+		ARG 1 url
+		ARG 2 path

@@ -1,0 +1,10 @@
+CLASS yo net/minecraft/client/sound/GameSoundManager
+	FIELD a system Lpaulscode/sound/SoundSystem;
+	METHOD a playSound (Ljava/lang/String;FF)V
+		ARG 1 id
+		ARG 2 volume
+		ARG 3 pitch
+	METHOD b playSound (Ljava/lang/String;FFFFF)V
+		ARG 1 id
+		ARG 5 volume
+		ARG 6 pitch

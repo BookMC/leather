@@ -1,3 +1,4 @@
 CLASS ub net/minecraft/client/screen/components/Component
+	METHOD a renderTintedBackground (IIIIII)V
 	METHOD a renderShadedText (Lsj;Ljava/lang/String;III)V
 	METHOD b renderText (Lsj;Ljava/lang/String;III)V

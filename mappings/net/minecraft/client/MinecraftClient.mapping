@@ -1,19 +1,26 @@
 CLASS net/minecraft/client/Minecraft net/minecraft/client/MinecraftClient
 	FIELD A applet Lnet/minecraft/client/MinecraftApplet;
+	FIELD B soundManager Lyo;
 	FIELD K debugInfo Ljava/lang/String;
 	FIELD P startTime J
+	FIELD Q fullscreen Z
+	FIELD R isFailing Z
+	FIELD U textureDownloadThread Lcz;
 	FIELD Z minecraftFolder Ljava/io/File;
+	FIELD a instance Lnet/minecraft/client/Minecraft;
 	FIELD af gameFolder Ljava/io/File;
 	FIELD b reservedMemory [B
 		COMMENT Reserved memory is present to make sure the game has enough memory to continue.
 		COMMENT If it doesn't then it WILL crash with an {@see OutOfMemoryException}
 	FIELD d gameWidth I
 	FIELD e gameHeight I
+	FIELD f world Lfd;
 	FIELD r currentScreen Lda;
 	FIELD z settings Lkv;
 	METHOD <init> (Ljava/awt/Component;Ljava/awt/Canvas;Lnet/minecraft/client/MinecraftApplet;IIZ)V
 		ARG 3 applet
 	METHOD C forceReload ()V
+	METHOD a launch ()V
 	METHOD a openScreen (Lda;)V
 		ARG 1 screen
 	METHOD a createGameFolder (Ljava/lang/String;)Ljava/io/File;
@@ -22,13 +29,19 @@ CLASS net/minecraft/client/Minecraft net/minecraft/client/MinecraftClient
 		ARG 0 username
 	METHOD a startGame (Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 		ARG 0 username
+	METHOD a onFailure (Lmh;)V
+		ARG 1 failure
 	METHOD b getGameFolder ()Ljava/io/File;
 	METHOD b fail (Lmh;)V
 		ARG 1 failure
 	METHOD c pushPhase (Ljava/lang/String;)V
+		COMMENT The pushPhase method checks if there are any GL errors currently available, if there are then it
+		COMMENT prints them (with the current phase) to make debugging simpler.
 		ARG 1 phase
 	METHOD e cleanup ()V
 	METHOD f exitGame ()V
+	METHOD j toggleFullscreen ()V
+	METHOD m toggleDimension ()V
 	METHOD main ([Ljava/lang/String;)V
 		ARG 0 args
 	METHOD y getPlatform ()Lpd;

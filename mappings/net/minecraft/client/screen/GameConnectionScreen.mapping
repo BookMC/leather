@@ -1,0 +1,6 @@
+CLASS vx net/minecraft/client/screen/GameConnectionScreen
+	FIELD a authorization Lnb;
+	METHOD <init> (Lnet/minecraft/client/Minecraft;Ljava/lang/String;I)V
+		ARG 1 game
+		ARG 2 ip
+		ARG 3 port

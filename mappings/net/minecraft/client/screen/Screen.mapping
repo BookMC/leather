@@ -4,11 +4,26 @@ CLASS da net/minecraft/client/screen/Screen
 	FIELD d height I
 	FIELD e components Ljava/util/List;
 	FIELD g gameFontRenderer Lsj;
+	METHOD a onKeypress (CI)V
+		ARG 1 keyChar
+		ARG 2 keyCode
+	METHOD a renderCurrentContextBackground (I)V
+		ARG 1 tint
 	METHOD a render (IIF)V
 		ARG 1 mouseXPosition
 		ARG 2 mouseYPosition
 		ARG 3 ticks
 	METHOD a onButtonPressed (Lke;)V
 		ARG 1 component
+	METHOD a (Lnet/minecraft/client/Minecraft;II)V
+		ARG 1 game
+		ARG 2 width
+		ARG 3 height
 	METHOD b initialize ()V
+	METHOD b renderBlockBackground (I)V
+	METHOD d getClipboardData ()Ljava/lang/String;
+	METHOD e watchEvents ()V
+	METHOD f onMouseEvent ()V
+	METHOD g onKeyboardEvent ()V
 	METHOD h normalizeKeyboard ()V
+	METHOD i renderCurrentContextBackground ()V

@@ -1,0 +1,15 @@
+CLASS ji net/minecraft/client/texture/ResolvedTexture
+	FIELD m image Ljava/awt/image/BufferedImage;
+	METHOD <init> (Lik;Lkv;)V
+		ARG 2 config
+	METHOD a getPixels (Ljava/awt/image/BufferedImage;[I)[I
+		ARG 1 image
+		ARG 2 pixels
+	METHOD a readImage (Ljava/io/InputStream;)Ljava/awt/image/BufferedImage;
+		ARG 1 stream
+	METHOD a ([IIII)V
+		ARG 1 rgbArray
+	METHOD b getPixels (Ljava/awt/image/BufferedImage;)[I
+		ARG 1 image
+	METHOD c copyImage (Ljava/awt/image/BufferedImage;)Ljava/awt/image/BufferedImage;
+		ARG 1 image

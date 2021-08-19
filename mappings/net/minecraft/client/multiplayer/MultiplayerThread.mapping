@@ -1,0 +1,10 @@
+CLASS wz net/minecraft/client/multiplayer/MultiplayerThread
+	FIELD a game Lnet/minecraft/client/Minecraft;
+	FIELD b ip Ljava/lang/String;
+	FIELD c port I
+	FIELD d screen Lvx;
+	METHOD <init> (Lvx;Lnet/minecraft/client/Minecraft;Ljava/lang/String;I)V
+		ARG 1 screen
+		ARG 2 game
+		ARG 3 ip
+		ARG 4 port

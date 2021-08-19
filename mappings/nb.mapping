@@ -1,0 +1,4 @@
+CLASS nb
+	FIELD f game Lnet/minecraft/client/Minecraft;
+	METHOD <init> (Lnet/minecraft/client/Minecraft;Ljava/lang/String;I)V
+		ARG 1 game
