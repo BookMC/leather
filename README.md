@@ -6,10 +6,10 @@ Tannery is our custom gradle plugin to create the perfect mapping workspace
 
 ## Tasks
 ### `build`
-Any task in the project that uses Jar will automatically run the `export` task.
+Any task in the project that uses `Jar` will automatically run the `export` task.
 
 ### `export`
-The export task converts the mappings directory 
+The export task converts the `mappings` directory into a tiny file. 
 
 ### `downloadMinecraftLibraries`
 This task shouldn't really be run by itself but reads the version manifest and downloads all the libraries + client/server jar from it.
