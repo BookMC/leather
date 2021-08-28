@@ -1,0 +1,46 @@
+package org.bookmc.tannery.utils
+
+const val DOWNLOAD_LIBRARIES_TASK = "downloadMinecraftLibraries"
+const val DOWNLOAD_MANIFEST = "downloadMinecraftManifest"
+const val EXPORT_TASK = "export"
+const val GENERATE_RUN_TASK = "generateRunTask"
+
+const val GROUP = "tannery"
+const val EXPORT_DIRECTORY = "leather-exported"
+const val MAPPINGS_DIRECTORY = "mappings"
+const val DATA_FOLDER = "enigma-data"
+const val VERSION_MANIFEST = "https://launchermeta.mojang.com/mc/game/version_manifest_v2.json"
+
+const val INTELLIJ_CONFIGURATION = "configuration"
+const val PROGRAM_PARAMETERS = "PROGRAM_PARAMETERS"
+const val INTELLIJ_WORKSPACE = ".idea/workspace.xml"
+const val MAIN_CLASS_NAME = "MAIN_CLASS_NAME"
+const val RUN_MANAGER = "RunManager"
+const val RUN_CONFIG_NAME = "Enigma - %s"
+const val RUN_CONFIG_TYPE = "Application"
+const val INTELLIJ_OPTION = "option"
+const val INTELLIJ_METHOD = "method"
+const val INTELLIJ_MAKE = "Make"
+
+// Booleans
+const val TRUE = "true"
+const val YES = "yes"
+const val NO = "no"
+
+const val NAME_IS_GENERATED = "nameIsGenerated"
+const val FACTORY_NAME = "factoryName"
+const val ENABLED = "enabled"
+const val COMPONENT = "component"
+const val PROJECT = "project"
+const val NAME = "name"
+const val VALUE = "value"
+const val TYPE = "type"
+const val ITEM = "item"
+const val LIST = "list"
+const val UTF8 = "UTF-8"
+const val XML = "xml"
+
+const val GEN_INTELLIJ_RUNS = "createIntellijRun"
+const val IMPLEMENTATION = "implementation"
+const val RUNTIME_ONLY = "runtimeOnly"
+const val GRADLE_GROUP = "recaf"

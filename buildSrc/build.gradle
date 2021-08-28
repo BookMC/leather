@@ -1,10 +1,14 @@
 plugins {
     id "org.jetbrains.kotlin.jvm" version "1.5.21"
+    id "java-gradle-plugin"
 }
 
 ext {
     ktorVersion = "1.6.0"
 }
+
+group "org.bookmc"
+version "0.1.0"
 
 repositories {
     mavenCentral()
@@ -25,4 +29,13 @@ dependencies {
 
     implementation "cuchaz:enigma-cli:1.4.1"
     implementation "cuchaz:enigma:1.4.1"
+}
+
+gradlePlugin {
+    plugins {
+        tannery {
+            id = 'tannery'
+            implementationClass = 'org.bookmc.tannery.TanneryPlugin'
+        }
+    }
 }

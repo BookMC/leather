@@ -1,50 +1,32 @@
-import org.bookmc.leather.tasks.ExportMappingsTask
-import org.bookmc.leather.tasks.GenerateJarTask
-
 plugins {
     id "maven-publish"
-    id "java"
+    id "tannery"
+    id "org.jetbrains.kotlin.jvm" version "1.5.21"
 }
 
 def branch = "git rev-parse --abbrev-ref HEAD".execute().text.trim()
 
-def buildNumber = "build.${System.getenv().BUILD_NUMBER}" ?: "local"
+def buildNumber = System.getenv().BUILD_NUMBER ? "build.${System.getenv().BUILD_NUMBER}" : "local"
 
 group "org.bookmc"
-version "0.2.2+${buildNumber}-${branch}"
+version "0.2.2+${buildNumber}"
 
-tasks.register("generateJar", GenerateJarTask) {
-    group = "leather"
-    if (branch == "main") {
-        throw new IllegalStateException("The branch cannot be main! It must be a version")
-    }
-
-    it.version.set(branch)
-    it.dest.set("mapping-utils")
-}
-
-tasks.register("exportMappingsToTiny", ExportMappingsTask) {
-    group = "leather"
-
-    mappings.set("mappings")
-    exportedFile.set("build/exported/mappings/mapping.tiny")
-
-    doLast {
-        project.configurations.register("mappings")
-        project.dependencies.add("mappings", project.files("build/exported"))
+repositories {
+    mavenCentral()
+    maven {
+        url "https://maven.fabricmc.net"
     }
 }
 
-tasks.jar.dependsOn(tasks.exportMappingsToTiny)
+dependencies {
+    implementation "org.jetbrains.kotlin:kotlin-stdlib"
+    implementation "cuchaz:enigma-swing:1.4.1:all"
+    implementation "commons-io:commons-io:2.11.0"
+}
 
 jar {
-    from {
-        if (configurations.findByName("mappings") != null) {
-            configurations.getByName("mappings").collect { it.isDirectory() ? it : zipTree(it) }
-        }
-    }
+    exclude "org/**" // Only for launching
 }
-
 
 publishing {
     repositories {
