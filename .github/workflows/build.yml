@@ -1,4 +1,4 @@
-name: Build and publish
+name: Build and test
 
 on: [push]
 jobs:
@@ -6,6 +6,12 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Generate build number
+        id: buildnumber
+        uses: einaregilsson/build-number@v3
+        with:
+          token: ${{ secrets.github_token }}
+          prefix: ${{ github.ref }}
       - uses: actions/checkout@v2
       - name: Set up JDK 16
         uses: actions/setup-java@v2
@@ -23,4 +29,7 @@ jobs:
       - name: Grant execute permission for gradlew
         run: chmod +x gradlew
       - name: Build with Gradle
-        run: ./gradlew build
+        run: ./gradlew build publish
+        env:
+          MAVEN_USER: ${{ secrets.MAVEN_USER }}
+          MAVEN_PASSWORD: ${{ secrets.MAVEN_PASSWORD }}
