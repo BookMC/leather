@@ -1,2 +1,5 @@
 CLASS sj net/minecraft/client/font/GameFontRenderer
+	METHOD <init> (Lkv;Ljava/lang/String;Lji;)V
+		ARG 2 texutreLocation
+		ARG 3 texture
 	METHOD a getWidth (Ljava/lang/String;)I
